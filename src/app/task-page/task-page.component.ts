@@ -40,4 +40,13 @@ export class TaskPageComponent {
       this.filteredTasks = [...this.tasks];
     }
   }
+
+  deleteTask(taskToDelete: string) {
+    const index = this.tasks.indexOf(taskToDelete);
+    if (index > -1) {
+      this.tasks.splice(index, 1);
+    }
+    // Reapply the filter to update filteredTasks.
+    this.filterTasks();
+  }
 }
